@@ -291,30 +291,6 @@ const PRODUCTS = [
       os: "Windows 11 Home",
     },
   },
-  {
-    id: "acer-swift-go-14",
-    brand: "Acer",
-    model: "Swift Go 14 SFG14-73",
-    price: 3299,
-    currency: "ر.س",
-    inStock: true,
-    image: "assets/laptops/acer-swift-go-14.jpg",
-    description:
-      "جهاز نحيف وخفيف بشاشة OLED وأداء ممتاز للمهام اليومية والإنتاجية أثناء التنقل.",
-    specs: {
-      cpu: "Intel Core Ultra 5 125H",
-      gpu: "Intel Arc Graphics",
-      ram: "16GB LPDDR5X",
-      storage: "512GB NVMe SSD",
-      screenSize: '14" 2.8K OLED (2880×1800)',
-      refreshRate: "120Hz",
-      battery: "65Wh",
-      weight: "1.32 كغ",
-      ports: "Thunderbolt 4 ×2، USB-A ×2، HDMI 2.1",
-      wifi: "Wi-Fi 6E",
-      bluetooth: "Bluetooth 5.1",
-      os: "Windows 11 Home",
-    },
-  },
+  
  
 ];
