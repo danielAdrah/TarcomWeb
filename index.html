@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0B5AA8">
+  <title>معرض اللابتوبات | Tarcom</title>
+  <meta name="description" content="معرض Tarcom التفاعلي لاستعراض اللابتوبات ومواصفاتها.">
+  <link rel="icon" href="assets/logo/tarcom-logo.png">
+
+  <!-- خطوط عربية: تعمل بدون اتصال عبر خطوط النظام كبديل -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <!-- ===================== الترويسة ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#" id="brandLink" aria-label="Tarcom — الصفحة الرئيسية">
+        <img class="brand-logo" src="assets/logo/tarcom-logo.png" alt="شعار Tarcom" width="64" height="72">
+      </a>
+
+      <div class="header-text">
+        <h1 class="header-title">معرض اللابتوبات</h1>
+        <p class="header-subtitle">استكشف الأجهزة المتوفرة لدينا</p>
+      </div>
+
+      <div class="counter" aria-live="polite">
+        <span class="counter-number" id="productCount">0</span>
+        <span class="counter-label" id="productCountLabel">جهاز متوفر</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+
+    <!-- ===================== شاشة الكتالوج ===================== -->
+    <section class="view view-catalog" id="catalogView" aria-labelledby="catalogHeading">
+      <h2 id="catalogHeading" class="visually-hidden">قائمة اللابتوبات</h2>
+
+      <div class="toolbar">
+        <div class="search" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="searchInput" type="search" inputmode="search" autocomplete="off"
+                 placeholder="ابحث عن جهاز، معالج، ماركة…" aria-label="بحث في الأجهزة">
+          <button class="search-clear" id="searchClear" type="button" aria-label="مسح البحث" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+
+        <button class="btn btn-ghost" id="clearFilters" type="button" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18M6 5l1 14h10l1-14M10 9v6M14 9v6"/></svg>
+          <span>مسح الفلاتر</span>
+        </button>
+      </div>
+
+      <nav class="brand-filters" aria-label="تصفية حسب الماركة">
+        <div class="brand-filters-track" id="brandFilters" role="tablist"></div>
+      </nav>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="10" y="14" width="44" height="30" rx="4"/>
+          <path d="M4 50h56M26 44l-2 6M38 44l2 6"/>
+          <path d="m26 25 12 8M38 25 26 33"/>
+        </svg>
+        <h3>لا توجد أجهزة مطابقة</h3>
+        <p>جرّب تغيير كلمات البحث أو اختيار ماركة أخرى.</p>
+        <button class="btn btn-primary" id="emptyReset" type="button">عرض جميع الأجهزة</button>
+      </div>
+    </section>
+
+    <!-- ===================== شاشة التفاصيل ===================== -->
+    <section class="view view-details" id="detailsView" aria-live="polite" hidden></section>
+  </main>
+
+  <!-- ===================== التذييل ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/logo/tarcom-logo.png" alt="" width="36" height="40" class="footer-logo">
+      <p>© <span id="year"></span> <strong>Tarcom</strong> — جميع الحقوق محفوظة</p>
+      <p class="footer-note">الأسعار والمواصفات قابلة للتغيير. يُرجى التأكد من الموظف المختص.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
