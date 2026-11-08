@@ -18,7 +18,7 @@ const PRODUCTS = [
     price: 7899,
     currency: "ل.س",
     inStock: true,
-    image: "assets/laptops/asus-rog-g16.jpg",
+    image: "assets/laptops/rog.png",
     description:
       "جهاز ألعاب وأداء احترافي بمعالج AMD Ryzen 9 وكرت RTX 5070 Ti، مع شاشة 240Hz عالية السطوع ونظام تبريد متقدم، مناسب للألعاب الثقيلة والتصميم والمونتاج.",
     specs: {
@@ -56,7 +56,7 @@ const PRODUCTS = [
     price: 4799,
     currency: "ر.س",
     inStock: true,
-    image: "assets/laptops/asus-zenbook-14.jpg",
+    image: "assets/laptops/zenbook.png",
     description:
       "لابتوب خفيف وأنيق بشاشة OLED مذهلة وبطارية تدوم طوال اليوم، الخيار المثالي لرجال الأعمال والطلاب.",
     specs: {

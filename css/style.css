@@ -244,7 +244,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   background: linear-gradient(135deg, var(--blue-50), #fff 60%, var(--orange-100));
   display: grid; place-items: center; overflow: hidden;
 }
-.card-media img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: transform .5s var(--ease); }
+.card-media img { width: 80%; height: 90%; object-fit: contain; padding: 1.3rem; transition: transform .5s var(--ease); }
 .card:hover .card-media img { transform: scale(1.06); }
 
 .badge {
@@ -318,7 +318,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   background: linear-gradient(135deg, var(--blue-50), #fff 55%, var(--orange-100));
   display: grid; place-items: center;
 }
-.gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: clamp(.75rem, 3vw, 2rem); animation: fadeIn .4s ease; }
+.gallery-main img { width: 80%; height: 100%; object-fit: contain; padding: clamp(.75rem, 3vw, 2rem); animation: fadeIn .4s ease; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .thumbs { display: flex; gap: var(--sp-2); overflow-x: auto; padding-block: 2px; scrollbar-width: thin; }
 .thumb {
