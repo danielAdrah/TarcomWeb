@@ -211,7 +211,8 @@
       .trim();
   }
 
-  const formatPrice = (n) => Number(n).toLocaleString("en-US");
+  const hasPrice = (n) => n !== null && n !== undefined && n !== "";
+  const formatPrice = (n) => (hasPrice(n) ? Number(n).toLocaleString("en-US") : "عند الطلب");
 
   /** صياغة عدّاد الأجهزة بالعربية الصحيحة */
   function countLabel(n) {
@@ -356,7 +357,7 @@
         h("div", { class: "card-footer" }, [
           h("div", { class: "price" }, [
             h("span", { class: "price-value" }, formatPrice(getPriceForCard(p))),
-            h("span", { class: "price-cur" }, p.currency || DEFAULT_CURRENCY),
+            h("span", { class: "price-cur" }, hasPrice(getPriceForCard(p)) ? p.currency || DEFAULT_CURRENCY : ""),
           ]),
           h("span", { class: "card-cta" }, ["التفاصيل", icon("arrow")]),
         ]),
@@ -365,7 +366,7 @@
     return card;
   }
 
-  const getPriceForCard = (p) => p.price ?? p.variants?.[0]?.price ?? 0;
+  const getPriceForCard = (p) => p.price ?? p.variants?.[0]?.price ?? null;
 
   function bump(node) {
     node.classList.remove("bump");
@@ -443,7 +444,7 @@
       h("div", { class: "overview-price-row" }, [
         h("div", { class: "price" }, [
           h("span", { class: "price-value" }, formatPrice(price)),
-          h("span", { class: "price-cur" }, p.currency || DEFAULT_CURRENCY),
+          h("span", { class: "price-cur" }, hasPrice(price) ? p.currency || DEFAULT_CURRENCY : ""),
         ]),
         h("span", { class: `status ${inStock ? "status-ok" : "status-out"}` }, inStock ? "متوفر في المعرض" : "غير متوفر حاليًا"),
       ]),
