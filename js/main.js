@@ -388,9 +388,11 @@
     el.grid.hidden = items.length === 0;
     el.empty.hidden = items.length !== 0;
 
-    el.count.textContent = String(items.length);
-    el.countLabel.textContent = countLabel(items.length);
-    bump(el.count);
+    if (el.count) {
+      el.count.textContent = String(items.length);
+      bump(el.count);
+    }
+    if (el.countLabel) el.countLabel.textContent = countLabel(items.length);
 
     el.clearFilters.hidden = !isFiltering();
     el.searchClear.hidden = state.query === "";
