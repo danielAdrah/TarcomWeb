@@ -254,6 +254,12 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 }
 .badge-ok { background: var(--success-bg); color: var(--success); }
 .badge-out { background: var(--danger-bg); color: var(--danger); }
+.badge-used {
+  inset-block-start: auto; inset-block-end: .75rem; inset-inline-start: .75rem;
+  background: var(--orange-100); color: var(--orange-600);
+  border: 1px solid rgba(232, 117, 26, .22);
+  box-shadow: 0 2px 8px rgba(15, 30, 51, .08);
+}
 .card-brand-tag {
   position: absolute; inset-block-start: .75rem; inset-inline-end: .75rem;
   background: var(--blue-700); color: #fff; font-weight: 700; font-size: var(--fs-xs);

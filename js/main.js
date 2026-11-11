@@ -345,13 +345,14 @@
         type: "button",
         style: `--i:${Math.min(index, 14)}`,
         dataset: { id: p.id },
-        "aria-label": `عرض تفاصيل ${p.brand} ${p.model}`,
+        "aria-label": `عرض تفاصيل ${p.brand} ${p.model}${p.used === true ? " — مستعمل" : ""}`,
       },
       [
         h("div", { class: "card-media" }, [
           productImage(p.image || p.images?.[0], p.brand, `${p.brand} ${p.model}`),
           h("span", { class: `badge ${inStock ? "badge-ok" : "badge-out"}` }, inStock ? "متوفر" : "غير متوفر حاليًا"),
           h("span", { class: "card-brand-tag" }, ltr(p.brand)),
+          ...(p.used === true ? [h("span", { class: "badge badge-used" }, "مستعمل")] : []),
         ]),
         h("div", { class: "card-body" }, [h("h3", { class: "card-title" }, ltr(p.model, "bdi")), list]),
         h("div", { class: "card-footer" }, [
