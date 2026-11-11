@@ -377,7 +377,13 @@
   }
 
   function renderCatalog() {
-    const items = getFiltered();
+    const items = getFiltered().sort((a, b) => {
+      const priceA = getPriceForCard(a);
+      const priceB = getPriceForCard(b);
+      if (!hasPrice(priceA)) return hasPrice(priceB) ? 1 : 0;
+      if (!hasPrice(priceB)) return -1;
+      return Number(priceB) - Number(priceA);
+    });
     el.grid.replaceChildren(...items.map(buildCard));
     el.grid.hidden = items.length === 0;
     el.empty.hidden = items.length !== 0;

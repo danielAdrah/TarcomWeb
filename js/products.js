@@ -339,7 +339,7 @@ const PRODUCTS = [
     id: "asus-vivobook-x1502va",
     brand: "ASUS",
     model: "Vivobook 15 X1502VA (X1502VA-BQ903W)",
-    price: 94170,
+    price: 84680,
     currency: "ل.س",
     image: "assets/laptops/vivobook.png",
     description:
