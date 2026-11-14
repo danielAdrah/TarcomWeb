@@ -455,7 +455,7 @@
           h("span", { class: "price-value" }, formatPrice(price)),
           h("span", { class: "price-cur" }, hasPrice(price) ? p.currency || DEFAULT_CURRENCY : ""),
         ]),
-        h("span", { class: `status ${inStock ? "status-ok" : "status-out"}` }, inStock ? "متوفر في المعرض" : "غير متوفر حاليًا"),
+        h("span", { class: `status ${inStock ? "status-ok" : "status-out"}` }, inStock ? "متوفر في الصالة" : "غير متوفر حاليًا"),
       ]),
     ]);
 
