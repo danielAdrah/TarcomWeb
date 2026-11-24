@@ -308,7 +308,7 @@
           "aria-selected": String(state.brand === value),
           dataset: { brand: value },
         },
-        [h("span", {}, value === ALL ? label : ltr(label)), h("span", { class: "chip-count" }, String(count))]
+        [h("span", {}, value === ALL ? label : ltr(label)), h("span", { class: "chip-count" },)]
       );
 
     el.brandFilters.replaceChildren(
